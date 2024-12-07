@@ -3,16 +3,26 @@
 * {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
 
 body {
+    display: flex;
+    align-items: center;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     height: 100vh;
-    background-image: url(./src/assets/back.jpg);
+    background-image: url(./src/assets/back.webp);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 50% 50%;
+}
+
+main {
+    height: 100%;
+    display: flex;
+    gap: 30px;
+    overflow: hidden;
 }
 
 .container {
@@ -23,6 +33,11 @@ body {
     border-radius: 20px;
     box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
     height: 90vh;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
 }
 
 header {
@@ -62,25 +77,29 @@ nav {
 .logo {
     margin: 0;
     padding: 0 10px;
+    display: flex;
+    align-items: center;
 }
 
 .logo__icon {
     width: 40px;
     height: 40px;
     transition: transform 0.3s ease;
+    display: flex;
+    align-items: center;
 }
 
 .logo__icon:hover {
     transform: rotate(220deg);
 }
 
-main {
-    display: flex;
-    gap: 30px;
+.articles__content,
+.gallery__content {
+    flex: 1;
 }
 
 .articles {
-    flex: 2;
+    width: 70%;
     background: white;
     padding: 25px;
     border-radius: 20px;
@@ -91,12 +110,12 @@ main {
     border-bottom: 3px solid #333;
     padding-bottom: 15px;
     margin: 0 0 20px 0;
+    padding: 0 0 20px 0;
     font-size: 24px;
     color: #222;
 }
 
 .articles__content {
-    height: 350px;
     overflow-y: auto;
     padding-right: 20px;
     line-height: 1.8;
@@ -117,7 +136,7 @@ main {
 }
 
 .gallery {
-    flex: 1;
+    width: 30%;
     background: white;
     padding: 25px;
     border-radius: 20px;
@@ -128,12 +147,12 @@ main {
     border-bottom: 3px solid #333;
     padding-bottom: 15px;
     margin: 0 0 20px 0;
+    padding: 0 0 20px 0;
     font-size: 24px;
     color: #222;
 }
 
 .gallery__content {
-    height: 350px;
     overflow-y: auto;
     padding-right: 10px;
 }
